@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		048DA7CF2841DE7F008B6A42 /* RingtoneProLib.docc in Sources */ = {isa = PBXBuildFile; fileRef = 048DA7CE2841DE7F008B6A42 /* RingtoneProLib.docc */; };
 		048DA7D02841DE7F008B6A42 /* RingtoneProLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 048DA7CD2841DE7F008B6A42 /* RingtoneProLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41B74CE371FA74665FC43FA8 /* Pods_RingtoneProLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C96C393594762711D1C86B8 /* Pods_RingtoneProLib.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +27,9 @@
 		048DA7CD2841DE7F008B6A42 /* RingtoneProLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RingtoneProLib.h; sourceTree = "<group>"; };
 		048DA7CE2841DE7F008B6A42 /* RingtoneProLib.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = RingtoneProLib.docc; sourceTree = "<group>"; };
 		048DA7F92841DEDB008B6A42 /* RingtoneProZ.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RingtoneProZ.xcodeproj; path = ../RingtoneProZ/RingtoneProZ.xcodeproj; sourceTree = "<group>"; };
+		46EC160E81F80B0C07475745 /* Pods-RingtoneProLib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RingtoneProLib.release.xcconfig"; path = "Target Support Files/Pods-RingtoneProLib/Pods-RingtoneProLib.release.xcconfig"; sourceTree = "<group>"; };
+		7C96C393594762711D1C86B8 /* Pods_RingtoneProLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RingtoneProLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B7918778F19F7A230978DA0 /* Pods-RingtoneProLib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RingtoneProLib.debug.xcconfig"; path = "Target Support Files/Pods-RingtoneProLib/Pods-RingtoneProLib.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41B74CE371FA74665FC43FA8 /* Pods_RingtoneProLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +50,8 @@
 				048DA7F92841DEDB008B6A42 /* RingtoneProZ.xcodeproj */,
 				048DA7CC2841DE7F008B6A42 /* RingtoneProLib */,
 				048DA7CB2841DE7F008B6A42 /* Products */,
+				3810BC066B66B317DA2DA44F /* Pods */,
+				CBEE1A008B4DC795D5902B98 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +80,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3810BC066B66B317DA2DA44F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B7918778F19F7A230978DA0 /* Pods-RingtoneProLib.debug.xcconfig */,
+				46EC160E81F80B0C07475745 /* Pods-RingtoneProLib.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		CBEE1A008B4DC795D5902B98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C96C393594762711D1C86B8 /* Pods_RingtoneProLib.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -91,6 +116,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 048DA7D32841DE7F008B6A42 /* Build configuration list for PBXNativeTarget "RingtoneProLib" */;
 			buildPhases = (
+				1897A7E83A4E3D7DEADA1E17 /* [CP] Check Pods Manifest.lock */,
 				048DA7C52841DE7F008B6A42 /* Headers */,
 				048DA7C62841DE7F008B6A42 /* Sources */,
 				048DA7C72841DE7F008B6A42 /* Frameworks */,
@@ -162,6 +188,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1897A7E83A4E3D7DEADA1E17 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RingtoneProLib-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		048DA7C62841DE7F008B6A42 /* Sources */ = {
@@ -297,6 +348,7 @@
 		};
 		048DA7D42841DE7F008B6A42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B7918778F19F7A230978DA0 /* Pods-RingtoneProLib.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -324,6 +376,7 @@
 		};
 		048DA7D52841DE7F008B6A42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46EC160E81F80B0C07475745 /* Pods-RingtoneProLib.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
