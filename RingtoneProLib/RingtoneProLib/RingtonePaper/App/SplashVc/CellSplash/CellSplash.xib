@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Bold.otf">
+            <string>SFProText-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CellSplash" customModule="RingTones_Wallpapers" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="216" height="223"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="216" height="223"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kT4-uI-5Z3">
+                        <rect key="frame" x="0.0" y="0.0" width="216" height="223"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVU-kG-10y">
+                        <rect key="frame" x="0.0" y="0.0" width="216" height="223"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxh-Gj-GHX">
+                                <rect key="frame" x="32.5" y="82.5" width="151" height="20.5"/>
+                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.18550941780821914" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dxh-Gj-GHX" firstAttribute="centerX" secondItem="oVU-kG-10y" secondAttribute="centerX" id="GdK-47-CMY"/>
+                            <constraint firstItem="dxh-Gj-GHX" firstAttribute="width" secondItem="oVU-kG-10y" secondAttribute="width" multiplier="0.7" id="acv-O1-Ygj"/>
+                            <constraint firstAttribute="bottom" secondItem="dxh-Gj-GHX" secondAttribute="bottom" constant="120" id="eR6-2k-FmL"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="oVU-kG-10y" secondAttribute="trailing" id="11I-gs-3Hw"/>
+                <constraint firstItem="oVU-kG-10y" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6Fw-42-kif"/>
+                <constraint firstItem="kT4-uI-5Z3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AEC-bF-bPr"/>
+                <constraint firstItem="oVU-kG-10y" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="IOv-4J-Ywl"/>
+                <constraint firstAttribute="bottom" secondItem="kT4-uI-5Z3" secondAttribute="bottom" id="Z2Y-r4-P2w"/>
+                <constraint firstAttribute="bottom" secondItem="oVU-kG-10y" secondAttribute="bottom" id="bll-Zl-lUF"/>
+                <constraint firstAttribute="trailing" secondItem="kT4-uI-5Z3" secondAttribute="trailing" id="jFu-ym-ryN"/>
+                <constraint firstItem="kT4-uI-5Z3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wwJ-B1-41U"/>
+            </constraints>
+            <size key="customSize" width="216" height="223"/>
+            <connections>
+                <outlet property="lbTitle" destination="dxh-Gj-GHX" id="wHF-su-mrc"/>
+                <outlet property="viewVideo" destination="kT4-uI-5Z3" id="n6l-bQ-JOB"/>
+            </connections>
+            <point key="canvasLocation" x="210.1449275362319" y="74.665178571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

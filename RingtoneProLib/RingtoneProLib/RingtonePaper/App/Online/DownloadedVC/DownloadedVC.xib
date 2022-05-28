@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SF-Pro.ttf">
+            <string>SFPro-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DownloadedVC" customModule="RingTones_Wallpapers" customModuleProvider="target">
+            <connections>
+                <outlet property="bannerView" destination="hGw-YM-PEx" id="kEf-Yr-sCW"/>
+                <outlet property="btnDownload" destination="78w-4k-aBe" id="mkm-oy-UbC"/>
+                <outlet property="tbv" destination="hjs-7Y-xcU" id="5C4-h6-Ppx"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewEmpty" destination="obn-TT-71c" id="rpg-OY-TPA"/>
+                <outletCollection property="btnScreen" destination="cMj-q7-pu1" collectionClass="NSMutableArray" id="oOz-75-tbm"/>
+                <outletCollection property="btnScreen" destination="cBR-Mb-sNb" collectionClass="NSMutableArray" id="Erq-I0-mb5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="eLd-CZ-Y6f">
+                    <rect key="frame" x="15" y="44" width="384" height="84.5"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGw-YM-PEx" customClass="GADBannerView">
+                            <rect key="frame" x="0.0" y="0.0" width="384" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="z7g-Bk-iws"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downloaded" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGn-uF-tbL">
+                            <rect key="frame" x="0.0" y="51" width="384" height="33.5"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="28"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjs-7Y-xcU">
+                    <rect key="frame" x="0.0" y="213.5" width="414" height="682.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obn-TT-71c">
+                    <rect key="frame" x="41.5" y="395" width="331" height="116"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WdK-Rd-sD1">
+                            <rect key="frame" x="20" y="10" width="291" height="96"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your songs downloaded is empty, try to download some song…" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hw3-mb-NQS">
+                                    <rect key="frame" x="8.5" y="0.0" width="274" height="36"/>
+                                    <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78w-4k-aBe">
+                                    <rect key="frame" x="29" y="46" width="233" height="50"/>
+                                    <color key="backgroundColor" red="0.062745098040000002" green="0.80392156859999997" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="jgw-NS-qdg"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
+                                    <state key="normal" title="Download Now">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="clickDownload:" destination="-1" eventType="touchUpInside" id="5c9-Kg-oG7"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="78w-4k-aBe" firstAttribute="width" secondItem="WdK-Rd-sD1" secondAttribute="width" multiplier="0.8" id="QAF-Z3-XdX"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="WdK-Rd-sD1" firstAttribute="leading" secondItem="obn-TT-71c" secondAttribute="leading" constant="20" id="OOz-4Y-xHP"/>
+                        <constraint firstAttribute="bottom" secondItem="WdK-Rd-sD1" secondAttribute="bottom" constant="10" id="OcO-3O-q1k"/>
+                        <constraint firstAttribute="trailing" secondItem="WdK-Rd-sD1" secondAttribute="trailing" constant="20" id="b3k-2W-FoX"/>
+                        <constraint firstItem="WdK-Rd-sD1" firstAttribute="top" secondItem="obn-TT-71c" secondAttribute="top" constant="10" id="pZa-YO-kFd"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SAy-ow-7dD">
+                    <rect key="frame" x="15" y="148.5" width="384" height="45"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMj-q7-pu1">
+                            <rect key="frame" x="0.0" y="0.0" width="187" height="45"/>
+                            <color key="backgroundColor" red="0.062745098040000002" green="0.80392156859999997" blue="0.49019607840000001" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                            <state key="normal" title="Play" image="ic_Play">
+                                <color key="titleColor" systemColor="systemGreenColor"/>
+                            </state>
+                            <connections>
+                                <action selector="clickPlay:" destination="-1" eventType="touchUpInside" id="cau-5H-d6E"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBR-Mb-sNb">
+                            <rect key="frame" x="197" y="0.0" width="187" height="45"/>
+                            <color key="backgroundColor" red="0.062745098040000002" green="0.80392156859999997" blue="0.49019607840000001" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                            <state key="normal" title="Shuffle" image="suffle">
+                                <color key="titleColor" systemColor="systemGreenColor"/>
+                            </state>
+                            <connections>
+                                <action selector="clickShuffle:" destination="-1" eventType="touchUpInside" id="Epb-pI-nke"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="ANv-AY-tOc"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="SAy-ow-7dD" firstAttribute="top" secondItem="eLd-CZ-Y6f" secondAttribute="bottom" constant="20" id="2il-kl-9Bw"/>
+                <constraint firstItem="obn-TT-71c" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="7hy-0Q-ffq"/>
+                <constraint firstItem="obn-TT-71c" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="8LH-n6-L2n"/>
+                <constraint firstAttribute="bottom" secondItem="hjs-7Y-xcU" secondAttribute="bottom" id="9El-PQ-cEn"/>
+                <constraint firstItem="eLd-CZ-Y6f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="Bax-aX-3pu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eLd-CZ-Y6f" secondAttribute="trailing" constant="15" id="Dg7-oa-S2u"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SAy-ow-7dD" secondAttribute="trailing" constant="15" id="GDT-6S-XSw"/>
+                <constraint firstItem="hjs-7Y-xcU" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="IMI-rK-qHr"/>
+                <constraint firstItem="SAy-ow-7dD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="SxA-mG-EMn"/>
+                <constraint firstItem="hjs-7Y-xcU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="V0k-yK-mkc"/>
+                <constraint firstItem="hjs-7Y-xcU" firstAttribute="top" secondItem="SAy-ow-7dD" secondAttribute="bottom" constant="20" id="bIV-gg-iM1"/>
+                <constraint firstItem="eLd-CZ-Y6f" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="xu5-uX-aWJ"/>
+                <constraint firstItem="obn-TT-71c" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="z0M-r7-ipM"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="85.714285714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_Play" width="21" height="20"/>
+        <image name="suffle" width="21" height="20"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

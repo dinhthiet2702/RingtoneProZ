@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CellCategoryWall" customModule="RingTones_Wallpapers" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="130" height="123"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="130" height="123"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NhM-ab-SUb">
+                        <rect key="frame" x="0.0" y="0.0" width="130" height="123"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrd-hc-rfM">
+                        <rect key="frame" x="0.0" y="0.0" width="130" height="123"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AoM-Cv-oMZ">
+                                <rect key="frame" x="15" y="92" width="35" height="16"/>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="AoM-Cv-oMZ" secondAttribute="bottom" constant="15" id="Mps-Xb-njf"/>
+                            <constraint firstItem="AoM-Cv-oMZ" firstAttribute="leading" secondItem="yrd-hc-rfM" secondAttribute="leading" constant="15" id="uuo-za-2cj"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="yrd-hc-rfM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2bC-WY-iJ1"/>
+                <constraint firstItem="NhM-ab-SUb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="C0R-xe-n0O"/>
+                <constraint firstAttribute="bottom" secondItem="yrd-hc-rfM" secondAttribute="bottom" id="VRh-eJ-0Qt"/>
+                <constraint firstItem="NhM-ab-SUb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ZYg-P6-2BV"/>
+                <constraint firstItem="yrd-hc-rfM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="d5y-kf-1lh"/>
+                <constraint firstAttribute="trailing" secondItem="yrd-hc-rfM" secondAttribute="trailing" id="iee-hW-ygb"/>
+                <constraint firstAttribute="trailing" secondItem="NhM-ab-SUb" secondAttribute="trailing" id="v4c-S3-KHI"/>
+                <constraint firstAttribute="bottom" secondItem="NhM-ab-SUb" secondAttribute="bottom" id="yMG-uS-aAP"/>
+            </constraints>
+            <size key="customSize" width="130" height="123"/>
+            <connections>
+                <outlet property="imv" destination="NhM-ab-SUb" id="KN4-DU-Dkl"/>
+                <outlet property="lbTitle" destination="AoM-Cv-oMZ" id="sxd-CL-9UA"/>
+            </connections>
+            <point key="canvasLocation" x="153.62318840579712" y="102.12053571428571"/>
+        </collectionViewCell>
+    </objects>
+</document>

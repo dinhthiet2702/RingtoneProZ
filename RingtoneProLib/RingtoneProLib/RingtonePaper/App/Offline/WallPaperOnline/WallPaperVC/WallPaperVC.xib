@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WallPaperVC" customModule="RingTones_Wallpapers" customModuleProvider="target">
+            <connections>
+                <outlet property="bannerView" destination="ZzK-p2-zfL" id="1Yw-zH-oAv"/>
+                <outlet property="contentView" destination="IVF-ZW-7bY" id="xja-qa-2RB"/>
+                <outlet property="segeControl" destination="2ce-Gm-MoT" id="Bgz-cl-EKE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="582-zQ-U9z">
+                    <rect key="frame" x="15" y="44" width="384" height="130"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZzK-p2-zfL" customClass="GADBannerView">
+                            <rect key="frame" x="0.0" y="0.0" width="384" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="g92-WX-Svf"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ce-Gm-MoT" customClass="SASSegmentsView" customModule="RingTones_Wallpapers" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="70" width="384" height="60"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="aCP-Qd-13f"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="underlineViewBackgroundColor">
+                                    <color key="value" red="0.062745098040000002" green="0.80392156859999997" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="viewBackgroundColor">
+                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="colorSelectedSegment">
+                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="colorUnSelectedSegment">
+                                    <color key="value" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IVF-ZW-7bY">
+                    <rect key="frame" x="0.0" y="174" width="414" height="722"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IVF-ZW-7bY" secondAttribute="trailing" id="1LH-2l-tU3"/>
+                <constraint firstItem="IVF-ZW-7bY" firstAttribute="top" secondItem="582-zQ-U9z" secondAttribute="bottom" id="2bi-BP-RYk"/>
+                <constraint firstItem="582-zQ-U9z" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="AP7-uK-Nj7"/>
+                <constraint firstItem="582-zQ-U9z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="eX6-6q-86X"/>
+                <constraint firstItem="IVF-ZW-7bY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qlz-9Q-w7a"/>
+                <constraint firstAttribute="bottom" secondItem="IVF-ZW-7bY" secondAttribute="bottom" id="rUl-Ft-7ae"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="582-zQ-U9z" secondAttribute="trailing" constant="15" id="x0D-GT-fOZ"/>
+            </constraints>
+            <point key="canvasLocation" x="95.652173913043484" y="75"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

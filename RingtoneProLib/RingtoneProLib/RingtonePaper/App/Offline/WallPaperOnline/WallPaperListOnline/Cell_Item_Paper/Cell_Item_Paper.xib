@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="Cell_Item_Paper" customModule="RingTones_Wallpapers" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="123" height="196"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="123" height="196"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7kB-Ju-NMQ">
+                        <rect key="frame" x="0.0" y="0.0" width="123" height="196"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="iconLive" translatesAutoresizingMaskIntoConstraints="NO" id="JGO-WH-KiM">
+                        <rect key="frame" x="10" y="10" width="20" height="20"/>
+                    </imageView>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIA-bS-kAm">
+                        <rect key="frame" x="93" y="10" width="20" height="22"/>
+                        <state key="normal" image="deleteF"/>
+                        <connections>
+                            <action selector="clickDelete:" destination="gTV-IL-0wX" eventType="touchUpInside" id="xO9-IE-RUU"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="YIA-bS-kAm" secondAttribute="trailing" constant="10" id="L62-NT-8cF"/>
+                <constraint firstAttribute="trailing" secondItem="7kB-Ju-NMQ" secondAttribute="trailing" id="R7i-wo-Vd6"/>
+                <constraint firstItem="JGO-WH-KiM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="Sog-Hm-sjS"/>
+                <constraint firstItem="YIA-bS-kAm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="aDG-So-Z8f"/>
+                <constraint firstAttribute="bottom" secondItem="7kB-Ju-NMQ" secondAttribute="bottom" id="cj6-Rr-7L2"/>
+                <constraint firstItem="7kB-Ju-NMQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dfv-4E-fGX"/>
+                <constraint firstItem="JGO-WH-KiM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="h8P-X6-LsZ"/>
+                <constraint firstItem="7kB-Ju-NMQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="vda-cs-jy0"/>
+            </constraints>
+            <size key="customSize" width="123" height="196"/>
+            <connections>
+                <outlet property="btnDelete" destination="YIA-bS-kAm" id="rSh-Vx-mB2"/>
+                <outlet property="iconLive" destination="JGO-WH-KiM" id="LUa-yX-ch9"/>
+                <outlet property="imv" destination="7kB-Ju-NMQ" id="2QA-aL-XfZ"/>
+            </connections>
+            <point key="canvasLocation" x="148.55072463768118" y="66.294642857142861"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="deleteF" width="20" height="20"/>
+        <image name="iconLive" width="20" height="20"/>
+    </resources>
+</document>

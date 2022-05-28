@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CompletionConvertVC" customModule="RingTones_Wallpapers" customModuleProvider="target">
+            <connections>
+                <outlet property="lbConvert" destination="k6f-Cy-RBV" id="Fsi-iE-zlh"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="btnView" destination="Fph-Cf-KfY" collectionClass="NSMutableArray" id="Wie-p6-tkr"/>
+                <outletCollection property="btnView" destination="uQn-LW-2Ic" collectionClass="NSMutableArray" id="YvO-om-nKC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="l8d-c1-mSl">
+                    <rect key="frame" x="25" y="737" width="364" height="115"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQn-LW-2Ic">
+                            <rect key="frame" x="0.0" y="0.0" width="364" height="50"/>
+                            <color key="backgroundColor" red="0.062745098040000002" green="0.80392156859999997" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="Z4C-zU-9ug"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
+                            <state key="normal" title="Continue Converting">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="clickContinue:" destination="-1" eventType="touchUpInside" id="xS8-Ir-kwL"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fph-Cf-KfY">
+                            <rect key="frame" x="0.0" y="65" width="364" height="50"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="QTV-Ks-b9C"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                            <state key="normal" title="Go to Ringtones Library">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="clickDismiss:" destination="-1" eventType="touchUpInside" id="LFB-BA-LQ1"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="checkDoneConvert" translatesAutoresizingMaskIntoConstraints="NO" id="odF-H5-gjM">
+                    <rect key="frame" x="154.5" y="144" width="105" height="104"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="104" id="5S4-Vj-3fF"/>
+                        <constraint firstAttribute="width" constant="105" id="va9-mw-Yg1"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Converted 2 videos to ringtones" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6f-Cy-RBV">
+                    <rect key="frame" x="103.5" y="278" width="207" height="53"/>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="k6f-Cy-RBV" firstAttribute="top" secondItem="odF-H5-gjM" secondAttribute="bottom" constant="30" id="C9h-Bf-G3p"/>
+                <constraint firstItem="odF-H5-gjM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="Ibn-OJ-cmZ"/>
+                <constraint firstItem="k6f-Cy-RBV" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="UAA-CZ-y9E"/>
+                <constraint firstItem="l8d-c1-mSl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="UM3-S6-uFl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="l8d-c1-mSl" secondAttribute="trailing" constant="25" id="iKR-ip-F3B"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="l8d-c1-mSl" secondAttribute="bottom" constant="10" id="jbv-jY-jZt"/>
+                <constraint firstItem="odF-H5-gjM" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="rZ0-mF-odq"/>
+                <constraint firstItem="k6f-Cy-RBV" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="x4a-Ij-VV9"/>
+            </constraints>
+            <point key="canvasLocation" x="-43" y="26"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="checkDoneConvert" width="105" height="104"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CellLive" customModule="RingTones_Wallpapers" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="434"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="434"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vG4-2c-r55" customClass="SDAnimatedImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="434"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGv-KN-OuH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="434"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NS1-VD-Knu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="434"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acQ-Va-ZMc">
+                                <rect key="frame" x="375" y="60" width="24" height="24"/>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="tapDismiss:" destination="gTV-IL-0wX" eventType="touchUpInside" id="1zs-T1-i1n"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILp-Pn-a2I">
+                                <rect key="frame" x="147" y="359" width="120" height="45"/>
+                                <color key="backgroundColor" red="0.062745098040000002" green="0.80392156859999997" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="CIA-he-bNX"/>
+                                    <constraint firstAttribute="width" constant="120" id="zJP-Hb-E24"/>
+                                </constraints>
+                                <state key="normal" image="downloadW"/>
+                                <connections>
+                                    <action selector="clickDownload:" destination="gTV-IL-0wX" eventType="touchUpInside" id="26d-Kt-nOL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LE2-gG-zx5">
+                                <rect key="frame" x="307" y="357.5" width="48" height="48"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="51u-XK-yyX"/>
+                                    <constraint firstAttribute="width" constant="48" id="dYf-gg-Zph"/>
+                                </constraints>
+                                <state key="normal" image="addW"/>
+                                <connections>
+                                    <action selector="clickAddLib:" destination="gTV-IL-0wX" eventType="touchUpInside" id="3jo-CX-lGP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CyO-Pe-jml">
+                                <rect key="frame" x="59" y="357.5" width="48" height="48"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Ten-0J-AYe"/>
+                                    <constraint firstAttribute="width" constant="48" id="X8X-Ga-eEV"/>
+                                </constraints>
+                                <state key="normal" image="share"/>
+                                <connections>
+                                    <action selector="clickShare:" destination="gTV-IL-0wX" eventType="touchUpInside" id="xyc-nd-gUE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LE2-gG-zx5" firstAttribute="leading" secondItem="ILp-Pn-a2I" secondAttribute="trailing" constant="40" id="1zd-ja-ZIa"/>
+                            <constraint firstAttribute="bottom" secondItem="ILp-Pn-a2I" secondAttribute="bottom" constant="30" id="3zc-b8-kQl"/>
+                            <constraint firstItem="CyO-Pe-jml" firstAttribute="centerY" secondItem="ILp-Pn-a2I" secondAttribute="centerY" id="6V8-LL-KnJ"/>
+                            <constraint firstItem="ILp-Pn-a2I" firstAttribute="centerX" secondItem="NS1-VD-Knu" secondAttribute="centerX" id="GfU-ju-zuD"/>
+                            <constraint firstItem="ILp-Pn-a2I" firstAttribute="leading" secondItem="CyO-Pe-jml" secondAttribute="trailing" constant="40" id="aXo-kj-KQt"/>
+                            <constraint firstItem="LE2-gG-zx5" firstAttribute="centerY" secondItem="ILp-Pn-a2I" secondAttribute="centerY" id="emC-fE-DKe"/>
+                            <constraint firstItem="acQ-Va-ZMc" firstAttribute="top" secondItem="NS1-VD-Knu" secondAttribute="top" constant="60" id="mcz-sU-5py"/>
+                            <constraint firstAttribute="trailing" secondItem="acQ-Va-ZMc" secondAttribute="trailing" constant="15" id="wX6-Ol-XUO"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vG4-2c-r55" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5yU-gs-43M"/>
+                <constraint firstAttribute="trailing" secondItem="vG4-2c-r55" secondAttribute="trailing" id="6gg-be-8CN"/>
+                <constraint firstAttribute="bottom" secondItem="vG4-2c-r55" secondAttribute="bottom" id="AKs-QH-rpd"/>
+                <constraint firstAttribute="bottom" secondItem="NS1-VD-Knu" secondAttribute="bottom" id="Fmo-4w-P8d"/>
+                <constraint firstItem="NS1-VD-Knu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="M4K-t5-eYp"/>
+                <constraint firstItem="NS1-VD-Knu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="N17-6G-wIR"/>
+                <constraint firstAttribute="trailing" secondItem="NS1-VD-Knu" secondAttribute="trailing" id="NVE-VJ-pIY"/>
+                <constraint firstItem="HGv-KN-OuH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Sz7-M2-Jgd"/>
+                <constraint firstItem="vG4-2c-r55" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Tru-PZ-L5a"/>
+                <constraint firstAttribute="bottom" secondItem="HGv-KN-OuH" secondAttribute="bottom" id="dqB-Jp-r92"/>
+                <constraint firstItem="HGv-KN-OuH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="e8n-bA-mGx"/>
+                <constraint firstAttribute="trailing" secondItem="HGv-KN-OuH" secondAttribute="trailing" id="ogc-dx-apH"/>
+            </constraints>
+            <size key="customSize" width="440" height="434"/>
+            <connections>
+                <outlet property="btnAdd" destination="LE2-gG-zx5" id="GnQ-e3-qbE"/>
+                <outlet property="btnDownload" destination="ILp-Pn-a2I" id="a53-p4-4li"/>
+                <outlet property="btnShare" destination="CyO-Pe-jml" id="p3N-mh-sfs"/>
+                <outlet property="imvLoad" destination="vG4-2c-r55" id="8LP-uB-3Tj"/>
+                <outlet property="viewWallpaper" destination="HGv-KN-OuH" id="6ll-sX-e5p"/>
+            </connections>
+            <point key="canvasLocation" x="44.927536231884062" y="6.6964285714285712"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="addW" width="24" height="24"/>
+        <image name="close" width="24" height="24"/>
+        <image name="downloadW" width="29" height="28"/>
+        <image name="share" width="24" height="24"/>
+    </resources>
+</document>

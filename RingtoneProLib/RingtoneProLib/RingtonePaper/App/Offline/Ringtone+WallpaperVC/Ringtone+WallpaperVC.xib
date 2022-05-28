@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Ringtone_WallpaperVC" customModule="RingTones_Wallpapers" customModuleProvider="target">
+            <connections>
+                <outlet property="bannerView" destination="YQr-8K-8ka" id="38l-lf-wHC"/>
+                <outlet property="btnAdd" destination="7XO-Fv-8Pf" id="6ff-9l-7wR"/>
+                <outlet property="btnFilter" destination="Aki-RC-Nch" id="4X6-EE-Ecv"/>
+                <outlet property="contentView" destination="8ks-66-TF4" id="AuN-0H-FzQ"/>
+                <outlet property="segeControl" destination="QgX-Ok-vFW" id="JTq-hQ-5hm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AvH-fF-JHE">
+                    <rect key="frame" x="15" y="44" width="384" height="120"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQr-8K-8ka" customClass="GADBannerView">
+                            <rect key="frame" x="0.0" y="0.0" width="384" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="ZxA-xf-hhN"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAD-Kn-1Vp">
+                            <rect key="frame" x="0.0" y="70" width="384" height="50"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Bwc-VE-F0X">
+                                    <rect key="frame" x="0.0" y="0.0" width="384" height="50"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QgX-Ok-vFW" customClass="SASSegmentsView" customModule="RingTones_Wallpapers" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="227" height="50"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="colorSelectedSegment">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="colorUnSelectedSegment">
+                                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="underlineViewBackgroundColor">
+                                                    <color key="value" red="0.062745098040000002" green="0.80392156859999997" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="viewBackgroundColor">
+                                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TmN-wQ-2mQ">
+                                            <rect key="frame" x="277" y="0.0" width="107" height="50"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aki-RC-Nch">
+                                                    <rect key="frame" x="0.0" y="0.0" width="57" height="50"/>
+                                                    <state key="normal" image="filter"/>
+                                                    <connections>
+                                                        <action selector="clickFilter:" destination="-1" eventType="touchUpInside" id="Xsg-6t-pze"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XO-Fv-8Pf">
+                                                    <rect key="frame" x="62" y="0.0" width="45" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="IWL-ix-K1u"/>
+                                                    </constraints>
+                                                    <state key="normal" image="add"/>
+                                                    <connections>
+                                                        <action selector="clickAdd:" destination="-1" eventType="touchUpInside" id="aeq-dM-kaP"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="HaM-xd-ICU"/>
+                                <constraint firstAttribute="bottom" secondItem="Bwc-VE-F0X" secondAttribute="bottom" id="Hzp-Yx-VXE"/>
+                                <constraint firstItem="Bwc-VE-F0X" firstAttribute="top" secondItem="bAD-Kn-1Vp" secondAttribute="top" id="Kda-M0-wvh"/>
+                                <constraint firstAttribute="trailing" secondItem="Bwc-VE-F0X" secondAttribute="trailing" id="M1i-Pr-vVg"/>
+                                <constraint firstItem="Bwc-VE-F0X" firstAttribute="leading" secondItem="bAD-Kn-1Vp" secondAttribute="leading" id="n04-9o-PXk"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ks-66-TF4">
+                    <rect key="frame" x="0.0" y="164" width="414" height="732"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="AvH-fF-JHE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="0CW-aU-MWJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AvH-fF-JHE" secondAttribute="trailing" constant="15" id="HfL-2D-Z4T"/>
+                <constraint firstItem="AvH-fF-JHE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="Hq5-YD-0mp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8ks-66-TF4" secondAttribute="trailing" id="RJj-xf-kLJ"/>
+                <constraint firstItem="8ks-66-TF4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bgW-87-JP8"/>
+                <constraint firstItem="8ks-66-TF4" firstAttribute="top" secondItem="AvH-fF-JHE" secondAttribute="bottom" id="lAT-hD-poh"/>
+                <constraint firstAttribute="bottom" secondItem="8ks-66-TF4" secondAttribute="bottom" id="txf-ku-Byr"/>
+            </constraints>
+            <point key="canvasLocation" x="-43.478260869565219" y="24.776785714285712"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="add" width="32" height="32"/>
+        <image name="filter" width="42" height="42"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

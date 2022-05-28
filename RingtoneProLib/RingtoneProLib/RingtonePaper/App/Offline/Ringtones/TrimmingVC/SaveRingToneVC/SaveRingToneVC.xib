@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
+        <array key="SF-Pro.ttf">
+            <string>SFPro-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SaveRingToneVC" customModule="RingTones_Wallpapers" customModuleProvider="target">
+            <connections>
+                <outlet property="spaceBottom" destination="CUx-sj-4jR" id="u7D-di-eNG"/>
+                <outlet property="tfNameRingtone" destination="3e1-1l-gSR" id="6ca-7W-Pwr"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="btnScreen" destination="nZI-xe-qRd" collectionClass="NSMutableArray" id="6rn-bN-acA"/>
+                <outletCollection property="btnScreen" destination="LRb-tf-rc1" collectionClass="NSMutableArray" id="P27-rG-NBU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZOb-4G-Ylh">
+                    <rect key="frame" x="0.0" y="44" width="414" height="70"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save your cut" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtX-HV-OTv">
+                            <rect key="frame" x="15" y="36.5" width="172.5" height="33.5"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="28"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IGB-Ep-GRk">
+                            <rect key="frame" x="365" y="46" width="24" height="24"/>
+                            <state key="normal" image="dissmisOption"/>
+                            <connections>
+                                <action selector="clickDismiss:" destination="-1" eventType="touchUpInside" id="LWR-Rs-Md6"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="YtX-HV-OTv" secondAttribute="bottom" id="D5H-j9-68j"/>
+                        <constraint firstItem="YtX-HV-OTv" firstAttribute="leading" secondItem="ZOb-4G-Ylh" secondAttribute="leading" constant="15" id="M7S-sZ-zJd"/>
+                        <constraint firstAttribute="height" constant="70" id="OV5-Su-Obs"/>
+                        <constraint firstAttribute="trailing" secondItem="IGB-Ep-GRk" secondAttribute="trailing" constant="25" id="pxJ-pT-IxE"/>
+                        <constraint firstAttribute="bottom" secondItem="IGB-Ep-GRk" secondAttribute="bottom" id="sHz-Lc-7cC"/>
+                    </constraints>
+                </view>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3e1-1l-gSR">
+                    <rect key="frame" x="25" y="129" width="364" height="50"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.040000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Aic-0Z-Cga"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="rIV-IX-l27"/>
+                        <constraint firstAttribute="height" constant="50" id="wlO-AU-9le"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter ringtone name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIB-mT-9WO">
+                    <rect key="frame" x="137.5" y="194" width="139" height="18"/>
+                    <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="c92-QL-NCH">
+                    <rect key="frame" x="25" y="737" width="364" height="115"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZI-xe-qRd">
+                            <rect key="frame" x="0.0" y="0.0" width="364" height="50"/>
+                            <color key="backgroundColor" red="0.062745098040000002" green="0.80392156859999997" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="xBJ-Ii-Ofu"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
+                            <state key="normal" title="Save &amp; Set Ringtone">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="clickSaveSet:" destination="-1" eventType="touchUpInside" id="Sao-2c-cxd"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRb-tf-rc1">
+                            <rect key="frame" x="0.0" y="65" width="364" height="50"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="1Ih-Op-X3K"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                            <state key="normal" title="Save Only">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="clickOnlySave:" destination="-1" eventType="touchUpInside" id="lBj-wD-N62"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="c92-QL-NCH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="10h-Dy-WGM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="c92-QL-NCH" secondAttribute="bottom" constant="10" id="CUx-sj-4jR"/>
+                <constraint firstItem="ZOb-4G-Ylh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DWY-ai-czj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="c92-QL-NCH" secondAttribute="trailing" constant="25" id="EOP-HI-tgR"/>
+                <constraint firstItem="3e1-1l-gSR" firstAttribute="top" secondItem="ZOb-4G-Ylh" secondAttribute="bottom" constant="15" id="GR6-el-oNe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3e1-1l-gSR" secondAttribute="trailing" constant="25" id="JU5-eL-aWW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZOb-4G-Ylh" secondAttribute="trailing" id="Ouv-nA-2jq"/>
+                <constraint firstItem="ZOb-4G-Ylh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Vd8-Is-8wB"/>
+                <constraint firstItem="zIB-mT-9WO" firstAttribute="centerX" secondItem="3e1-1l-gSR" secondAttribute="centerX" id="dPU-Lr-kca"/>
+                <constraint firstItem="zIB-mT-9WO" firstAttribute="top" secondItem="3e1-1l-gSR" secondAttribute="bottom" constant="15" id="k6F-0z-jef"/>
+                <constraint firstItem="3e1-1l-gSR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="zhL-hM-4bz"/>
+            </constraints>
+            <point key="canvasLocation" x="138" y="0.0"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="dissmisOption" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
