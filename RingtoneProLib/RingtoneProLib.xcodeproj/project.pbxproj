@@ -11,10 +11,21 @@
 		048DA7D02841DE7F008B6A42 /* RingtoneProLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 048DA7CD2841DE7F008B6A42 /* RingtoneProLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		048DA7FD2841DEDC008B6A42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 048DA7F92841DEDB008B6A42 /* RingtoneProZ.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 048DA7DF2841DEDA008B6A42;
+			remoteInfo = RingtoneProZ;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		048DA7CA2841DE7F008B6A42 /* RingtoneProLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RingtoneProLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		048DA7CD2841DE7F008B6A42 /* RingtoneProLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RingtoneProLib.h; sourceTree = "<group>"; };
 		048DA7CE2841DE7F008B6A42 /* RingtoneProLib.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = RingtoneProLib.docc; sourceTree = "<group>"; };
+		048DA7F92841DEDB008B6A42 /* RingtoneProZ.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RingtoneProZ.xcodeproj; path = ../RingtoneProZ/RingtoneProZ.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +42,7 @@
 		048DA7C02841DE7E008B6A42 = {
 			isa = PBXGroup;
 			children = (
+				048DA7F92841DEDB008B6A42 /* RingtoneProZ.xcodeproj */,
 				048DA7CC2841DE7F008B6A42 /* RingtoneProLib */,
 				048DA7CB2841DE7F008B6A42 /* Products */,
 			);
@@ -51,6 +63,14 @@
 				048DA7CE2841DE7F008B6A42 /* RingtoneProLib.docc */,
 			);
 			path = RingtoneProLib;
+			sourceTree = "<group>";
+		};
+		048DA7FA2841DEDB008B6A42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				048DA7FE2841DEDC008B6A42 /* RingtoneProZ.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,12 +130,28 @@
 			mainGroup = 048DA7C02841DE7E008B6A42;
 			productRefGroup = 048DA7CB2841DE7F008B6A42 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 048DA7FA2841DEDB008B6A42 /* Products */;
+					ProjectRef = 048DA7F92841DEDB008B6A42 /* RingtoneProZ.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				048DA7C92841DE7F008B6A42 /* RingtoneProLib */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		048DA7FE2841DEDC008B6A42 /* RingtoneProZ.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = RingtoneProZ.app;
+			remoteRef = 048DA7FD2841DEDC008B6A42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		048DA7C82841DE7F008B6A42 /* Resources */ = {
