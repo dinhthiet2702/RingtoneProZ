@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:RingtoneProZ/RingtoneProZ.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:RingtoneProLib/RingtoneProLib.xcodeproj">
    </FileRef>
    <FileRef

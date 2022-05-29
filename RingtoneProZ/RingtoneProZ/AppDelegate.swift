@@ -2,16 +2,11 @@
 //  AppDelegate.swift
 //  RingtoneProZ
 //
-//  Created by thiet on 28/5/2022.
+//  Created by thiet on 29/5/2022.
 //
 
 import UIKit
 import CoreData
-import MediaPlayer
-import RingtoneProLib
-import GoogleMobileAds
-import AppTrackingTransparency
-import AdSupport
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,86 +15,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        DropboxClientsManager.setupWithAppKey("l1c3vquozpg9bgs")
-        window = UIWindow(frame: UIScreen.main.bounds)
-
-        window?.rootViewController = LaunchAppVC()
-
-        ManagerFile.shared.createFolderAudio()
-        ManagerFile.shared.createFolderWallpaperDownload()
-        ManagerFile.shared.createFolderMyWallpapers()
-        ManagerFile.shared.createFolderMyRingtone()
-        ManagerFile.shared.createFolderAudioDownloaded()
-        FileManager.default.clearTmpDirectory()
-
-        requestIDFA()
-
-        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
-            for purchase in purchases {
-                switch purchase.transaction.transactionState {
-                case .purchased, .restored:
-                    if purchase.needsFinishTransaction {
-                        // Deliver content from server, then:
-                        SwiftyStoreKit.finishTransaction(purchase.transaction)
-                    }
-                    UserDefaults.setPremiumUser(inPre: true)
-                // Unlock content
-                case .failed, .purchasing, .deferred:
-                    break // do nothing
-                @unknown default:
-                    break
-                }
-            }
-        }
-
-        if UserDefaults.getOK(){
-
-        }else{
-            IAPManager.store.veryCheckRegisterPack()
-        }
-
-
-        window?.makeKeyAndVisible()
-
-
-
-
-        return true
+        // Override point for customization after application launch.
         return true
     }
-
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-
-        let oauthCompletion: DropboxOAuthCompletion = {
-            if let authResult = $0 {
-                switch authResult {
-                case .success:
-                    NotificationCenter.default.post(name: Notification.Name(rawValue: "Dropboxlistrefresh"), object: nil)
-                case .cancel:
-                    print("Authorization flow was manually canceled by user!")
-                case .error(_, let description):
-                    print("Error: \(String(describing: description))")
-                }
-            }
-        }
-        let canHandleUrl = DropboxClientsManager.handleRedirectURL(url, completion: oauthCompletion)
-        return canHandleUrl
-    }
-
-    func requestIDFA() {
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-                // Tracking authorization completed. Start loading ads here.
-                GADMobileAds.sharedInstance().start(completionHandler: nil)
-
-            })
-        } else {
-            GADMobileAds.sharedInstance().start(completionHandler: nil)
-        }
-    }
-
 
     // MARK: UISceneSession Lifecycle
+
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        // Called when a new scene session is being created.
+        // Use this method to select a configuration to create the new scene with.
+        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    }
+
+    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
+        // Called when the user discards a scene session.
+        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
+        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {
