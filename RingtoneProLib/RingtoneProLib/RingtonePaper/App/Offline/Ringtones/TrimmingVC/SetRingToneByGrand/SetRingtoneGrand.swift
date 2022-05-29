@@ -74,7 +74,7 @@ class SetRingtoneGrand: UIViewController {
                     activityViewController.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
                         if completed{
                             DispatchQueue.main.async {
-                                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
+                                guard let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first else { return }
                                 //---
                                 let tabbarVC = BaseTabbar()
                                 if !UserDefaults.getOnlineAPP(){
@@ -85,8 +85,7 @@ class SetRingtoneGrand: UIViewController {
                                     tabbarVC.animate(index: 2)
                                 }
                                 
-                                windowApp.rootViewController = tabbarVC
-                                windowApp.makeKeyAndVisible()
+                                window.rootViewController = tabbarVC
                             }
                         }
                     }
@@ -102,12 +101,11 @@ class SetRingtoneGrand: UIViewController {
     }
     @IBAction func clickLate(_ sender: Any) {
         DispatchQueue.main.async {
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
+            guard let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first else { return }
             //---
             let tabbarVC = BaseTabbar()
             tabbarVC.selectedIndex = 0
-            windowApp.rootViewController = tabbarVC
-            windowApp.makeKeyAndVisible()
+            window.rootViewController = tabbarVC
         }
     }
     

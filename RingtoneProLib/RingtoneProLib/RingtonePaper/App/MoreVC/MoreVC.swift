@@ -23,6 +23,14 @@ class MoreVC: BaseViewControllers {
     
     
     var index = 0
+
+    init() {
+        super.init(nibName: "MoreVC", bundle: BundleProvider.bundle)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -27,7 +27,15 @@ class SearchVC: BaseViewControllers {
             songVC.songs = self.songs
         }
     }
-    
+
+    init() {
+        super.init(nibName: "SearchVC", bundle: BundleProvider.bundle)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -71,7 +79,7 @@ class SearchVC: BaseViewControllers {
             searchField.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.9607843137, blue: 0.9607843137, alpha: 1)
             searchField.font = UIFont(name: "SFUIText-Regular", size: 14)
         }
-        changeLeftButton(image: #imageLiteral(resourceName: "backTrim"))
+        changeLeftButton(image: ImageProvider.image(named: "backTrim"))
         navigationItem.title = "Search"
         segeControl.addUnderlineForSelectedSegment(heightLine: 3)
         updateView()

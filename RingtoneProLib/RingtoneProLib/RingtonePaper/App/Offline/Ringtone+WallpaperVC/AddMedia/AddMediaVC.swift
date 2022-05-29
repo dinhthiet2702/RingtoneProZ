@@ -11,7 +11,7 @@ import Photos
 import MobileCoreServices
 
 
-protocol DidGotoLibary:class {
+protocol DidGotoLibary: AnyObject {
     func didGotoLibary(_ url:[URL])
 }
 
@@ -33,18 +33,26 @@ class AddMediaVC: BaseViewControllers {
     var urlTransformIsAudio = true
     
     var ringtoneAdds:[AddModel] = [
-        AddModel(name: "From Video", image: #imageLiteral(resourceName: "video"), color: #colorLiteral(red: 0.4274509804, green: 0.4431372549, blue: 1, alpha: 0.2)),
-        AddModel(name: "Wifi Transfer", image: #imageLiteral(resourceName: "wifi"), color: #colorLiteral(red: 0.368627451, green: 0.6862745098, blue: 1, alpha: 0.2)),
-        AddModel(name: "Drop box", image: #imageLiteral(resourceName: "dropbox"), color: #colorLiteral(red: 0.06274509804, green: 0.8039215686, blue: 0.4901960784, alpha: 0.2)),
-        AddModel(name: "File Browser", image: #imageLiteral(resourceName: "file"), color: #colorLiteral(red: 0.368627451, green: 0.5568627451, blue: 1, alpha: 0.2))
+        AddModel(name: "From Video", image: ImageProvider.image(named: "video"), color: #colorLiteral(red: 0.4274509804, green: 0.4431372549, blue: 1, alpha: 0.2)),
+        AddModel(name: "Wifi Transfer", image: ImageProvider.image(named: "wifi"), color: #colorLiteral(red: 0.368627451, green: 0.6862745098, blue: 1, alpha: 0.2)),
+        AddModel(name: "Drop box", image: ImageProvider.image(named: "dropbox"), color: #colorLiteral(red: 0.06274509804, green: 0.8039215686, blue: 0.4901960784, alpha: 0.2)),
+        AddModel(name: "File Browser", image: ImageProvider.image(named: "file"), color: #colorLiteral(red: 0.368627451, green: 0.5568627451, blue: 1, alpha: 0.2))
     ]
     
     var wallPaperAdds:[AddModel] = [
-        AddModel(name: "Import Image", image: #imageLiteral(resourceName: "imageI"), color: #colorLiteral(red: 0.4274509804, green: 0.4431372549, blue: 1, alpha: 0.2)),
-        AddModel(name: "Create Live Wallpaper", image: #imageLiteral(resourceName: "liveA"), color: #colorLiteral(red: 1, green: 0.537254902, blue: 0.4274509804, alpha: 0.2))
+        AddModel(name: "Import Image", image: ImageProvider.image(named: "imageI"), color: #colorLiteral(red: 0.4274509804, green: 0.4431372549, blue: 1, alpha: 0.2)),
+        AddModel(name: "Create Live Wallpaper", image: ImageProvider.image(named: "liveA"), color: #colorLiteral(red: 1, green: 0.537254902, blue: 0.4274509804, alpha: 0.2))
         
     ]
-    
+
+    init() {
+        super.init(nibName: "AddMediaVC", bundle: BundleProvider.bundle)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     
     
     override func viewDidLoad() {

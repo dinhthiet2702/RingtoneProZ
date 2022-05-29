@@ -45,7 +45,7 @@ class WebViewVC: BaseViewControllers {
         webView.allowsBackForwardNavigationGestures = true
         
         
-        changeLeftButton(image: #imageLiteral(resourceName: "backTrim"))
+        changeLeftButton(image: ImageProvider.image(named: "backTrim"))
     }
     func changeLeftButton(image:UIImage){
         

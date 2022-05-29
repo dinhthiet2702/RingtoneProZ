@@ -23,10 +23,10 @@ public typealias ProductIdentifier = String
 public typealias ProductsRequestCompletionHandler = (_ products: [SKProduct]) -> Void
 public typealias PurchaseSuccess = () -> Void
 
-struct IAPManager  {
+public struct IAPManager  {
     
     
-    static let store = IAPManager()
+    public static let store = IAPManager()
     
     
     static let oneMonth = "com.ringtonestune.one.month"
@@ -171,7 +171,7 @@ struct IAPManager  {
         return isPurchase
     }
     
-    func veryCheckRegisterPack(){
+    public func veryCheckRegisterPack(){
         let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: IAPManager.sharedSecret)
         
         SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-extension UserDefaults{
+public extension UserDefaults{
     
     static func setPremiumUser(inPre: Bool) {
         let defaults = UserDefaults.standard

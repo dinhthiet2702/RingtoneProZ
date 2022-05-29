@@ -13,7 +13,9 @@
 #import "LNPopupBar.h"
 #import "LNPopupCustomBarViewController.h"
 #import "UIViewController+LNPopupSupport.h"
-//#import "UIImageView+WebCache.h"
+#import <FirebaseCore/FirebaseCore.h>
+#import <SwiftyDropbox/SwiftyDropbox-Swift.h>
+#import <SwiftyStoreKit/SwiftyStoreKit-Swift.h>
 //#import "UIView+WebCache.h"
 //#import "SDWebImageDownloader.h"
 
@@ -24,4 +26,3 @@ FOUNDATION_EXPORT double RingtoneProLibVersionNumber;
 FOUNDATION_EXPORT const unsigned char RingtoneProLibVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <RingtoneProLib/PublicHeader.h>
-

@@ -27,7 +27,7 @@ class TrimmingVC: BaseViewControllers {
     
     var isPlay = true{
         didSet{
-            isPlay ? (btnPlay.setImage(#imageLiteral(resourceName: "pauseTrim"), for: .normal)) : (btnPlay.setImage(#imageLiteral(resourceName: "playTrim"), for: .normal))
+            isPlay ? (btnPlay.setImage(ImageProvider.image(named: "pauseTrim"), for: .normal)) : (btnPlay.setImage(ImageProvider.image(named: "playTrim"), for: .normal))
         }
     }
     var timer: Timer?
@@ -35,7 +35,7 @@ class TrimmingVC: BaseViewControllers {
     
     init(ringtone:RingtoneModel?) {
         self.ringtone = ringtone
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: "TrimmingVC", bundle: BundleProvider.bundle)
     }
     
     required init?(coder: NSCoder) {
@@ -80,9 +80,9 @@ class TrimmingVC: BaseViewControllers {
             rangeSlider.setVideoURL(videoURL: ringtone.url)
             
             rangeSlider.delegate = self
-            rangeSlider.setStartIndicatorImage(image: #imageLiteral(resourceName: "startSlider"))
-            rangeSlider.setEndIndicatorImage(image: #imageLiteral(resourceName: "endSlider"))
-            rangeSlider.setBorderImage(image: #imageLiteral(resourceName: "thumScale"))
+            rangeSlider.setStartIndicatorImage(image: ImageProvider.image(named: "startSlider") ?? UIImage())
+            rangeSlider.setEndIndicatorImage(image: ImageProvider.image(named: "endSlider") ?? UIImage())
+            rangeSlider.setBorderImage(image: ImageProvider.image(named: "thumScale") ?? UIImage())
             
             btnPlay.layer.borderWidth = 0.5
             btnPlay.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
@@ -98,7 +98,7 @@ class TrimmingVC: BaseViewControllers {
             timeLine.maximumValue = Float(ringtone.duration)
             timeLine.minimumTrackTintColor = .clear
             timeLine.maximumTrackTintColor = .clear
-            timeLine.setThumbImage(#imageLiteral(resourceName: "timeLine"), for: .normal)
+            timeLine.setThumbImage(ImageProvider.image(named: "timeLine"), for: .normal)
             rangeSlider.minSpace = 10
             if endTime >= 30{
                 rangeSlider.maxSpace = 30
@@ -114,7 +114,7 @@ class TrimmingVC: BaseViewControllers {
         
         
         
-        changeLeftButton(image: #imageLiteral(resourceName: "backTrim"))
+        changeLeftButton(image: ImageProvider.image(named: "backTrim"))
         changeRightButton(title: "Done", color: #colorLiteral(red: 0.06274509804, green: 0.8039215686, blue: 0.05882352941, alpha: 1))
         self.navigationItem.title = ringtone?.nameOriginal
         

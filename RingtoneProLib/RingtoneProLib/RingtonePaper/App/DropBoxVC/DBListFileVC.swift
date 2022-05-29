@@ -69,7 +69,7 @@ class DBListFileVC: BaseViewControllers, UISearchBarDelegate {
     
     func setupUI(){
         view.addSubview(tableView)
-        changeLeftButton(image: #imageLiteral(resourceName: "backTrim"))
+        changeLeftButton(image: ImageProvider.image(named: "backTrim"))
         tableView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         let logoutBarBtn = UIBarButtonItem(title:"Log Out", style:UIBarButtonItem.Style.plain, target: self, action:#selector(self.logoutBtnClicked))

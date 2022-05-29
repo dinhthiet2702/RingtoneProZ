@@ -11,13 +11,16 @@ import Firebase
 import FirebaseRemoteConfig
 
 
+
 enum ValueKey: String {
-    case onlineAppVer2
-    case lockAppVer2
-    case showSplashVideoVer2
+    case configApp
 }
 
-
+struct ConfigApp: Codable{
+    var onlineApp: Bool
+    var lockApp: Bool
+    var showSplashVideo: Bool
+}
 
 class FireBaseRemote {
     static let sharedInstance = FireBaseRemote()
@@ -25,29 +28,27 @@ class FireBaseRemote {
     
     var loadingDoneCallback: (() -> Void)?
     var fetchComplete = false
-    
+
     private init() {
         loadDefaultValues()
         fetchCloudValues()
-        
+
     }
-    
+
     func loadDefaultValues() {
-        let isUnlockKey: [String: Any?] = [
-            "onlineApp": false,
-            "lockApp": false,
-            "showSplashVideoVer2":false
+        let configApp: [String: Any?] = [
+            "configApp": ConfigApp.self
         ]
-        RemoteConfig.remoteConfig().setDefaults(isUnlockKey as? [String: NSObject])
+        RemoteConfig.remoteConfig().setDefaults(configApp as? [String: NSObject])
     }
-    
-    
+
+
     func activateDebugMode() {
         let settings = RemoteConfigSettings()
         settings.minimumFetchInterval = 0
         RemoteConfig.remoteConfig().configSettings = settings
     }
-    
+
     func fetchCloudValues() {
         activateDebugMode()
 
@@ -56,22 +57,48 @@ class FireBaseRemote {
                 print("Uh-oh. Got an error fetching remote values \(error)")
                 return
             }
-            
-            
-            RemoteConfig.remoteConfig().activate {_, _ in
-                if self.getFirebaseRemote(forKey: ValueKey.onlineAppVer2){
-                    UserDefaults.setOnlineAPP(isOnline: true)
-                    DispatchQueue.main.async {
-                        NotificationCenter.default.post(Notification.init(name: Notification.Name(rawValue: "FetchCompletion")))
+            RemoteConfig.remoteConfig().activate {[weak self] _, _ in
+                guard let self = self else { return }
+                if let data = self.getFirebaseRemote(forKey: ValueKey.configApp){
+                    if !UserDefaults.getOnlineAPP() && data.onlineApp {
+                        UserDefaults.setOnlineAPP(isOnline: true)
+                        guard let window = UIApplication.shared.windows.filter({ $0.isKeyWindow}).first else { return }
+                        //---
+                        let tabbarVC = LaunchAppVC()
+                        window.rootViewController = tabbarVC
                     }
+                    print("allowYoutube", data.onlineApp)
                 }
             }
         }
     }
-    
-    func getFirebaseRemote(forKey key: ValueKey) -> Bool {
-        let isUnlock = RemoteConfig.remoteConfig()[key.rawValue].boolValue
-        return isUnlock
+
+    public func getLockApp()->Bool{
+        if let data = self.getFirebaseRemote(forKey: ValueKey.configApp){
+            return data.lockApp
+        }else{
+            return false
+        }
+    }
+
+
+    public func getshowVideo() -> Bool{
+        if let data = self.getFirebaseRemote(forKey: ValueKey.configApp){
+            return data.showSplashVideo
+        }else{
+            return false
+        }
+    }
+
+
+    func getFirebaseRemote(forKey key: ValueKey) -> ConfigApp? {
+        let data = RemoteConfig.remoteConfig()[key.rawValue].dataValue
+        do {
+            let json = try JSONDecoder.init().decode(ConfigApp.self, from: data)
+            return json
+        } catch {
+            return nil
+        }
     }
     
 }

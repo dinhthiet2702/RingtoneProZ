@@ -22,49 +22,24 @@ class Ringtone_WallpaperVC: BaseViewControllers {
     var indexLast = 0
     let wallPaperListVC = MyWallPaperListVC()
     let myRingToneVC = MyRingToneVC()
-    
+
+    init() {
+        super.init(nibName: "Ringtone_WallpaperVC", bundle: BundleProvider.bundle)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         setupUI()
-        
-        if UserDefaults.getOnlineAPP(){
-            if !UserDefaults.getFirstLauchApp(){
-                if FireBaseRemote.sharedInstance.getFirebaseRemote(forKey: .showSplashVideoVer2){
-                    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
-                    //---
-                    let tabbarVC = SplashScreenVC()
-                    windowApp.rootViewController = tabbarVC
-                    windowApp.makeKeyAndVisible()
-                }else{
-                    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
-                    //---
-                    let tabbarVC = SplashImageVC()
-                    windowApp.rootViewController = tabbarVC
-                    windowApp.makeKeyAndVisible()
-                }
-            }
-            
-        }else{
-            if !UserDefaults.getFirstLauchApp(){
-                
-                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
-                //---
-                let tabbarVC = SplashImageVC()
-                windowApp.rootViewController = tabbarVC
-                windowApp.makeKeyAndVisible()
-                
-            }
-        }
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
-        NotificationCenter.default.addObserver(self, selector: #selector(didFetch), name: NSNotification.Name(rawValue: "FetchCompletion"), object: nil)
-        
         bannerView.isHidden = UserDefaults.getPremiumUser()
         
         
@@ -73,37 +48,6 @@ class Ringtone_WallpaperVC: BaseViewControllers {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.navigationController?.navigationBar.isHidden = false
-    }
-    @objc func didFetch(){
-        guard let window = UIApplication.shared.windows.filter({$0.isKeyWindow}).first else {
-            return
-        }
-        if !UserDefaults.getFirstLauchApp(){
-            
-            if FireBaseRemote.sharedInstance.getFirebaseRemote(forKey: .showSplashVideoVer2){
-                let tabbarVC = SplashScreenVC()
-                window.rootViewController = tabbarVC
-                UIView.transition(with: window,
-                                  duration: 0.55,
-                                  options: [.transitionCrossDissolve, .curveEaseOut],
-                                  animations: nil,
-                                  completion: { _ in
-                                    window.makeKeyAndVisible()
-                                  })
-            }else{
-                let splashVC = SplashImageVC()
-                window.rootViewController = splashVC
-                UIView.transition(with: window,
-                                  duration: 0.55,
-                                  options: [.transitionCrossDissolve, .curveEaseOut],
-                                  animations: nil,
-                                  completion: { _ in
-                                    window.makeKeyAndVisible()
-                                  })
-            }
-            
-            
-        }
     }
     
     func setupUI(){

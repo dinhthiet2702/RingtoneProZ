@@ -50,7 +50,7 @@ class BrowserLiveVC: BaseViewControllers {
         self.urlLive = urlLive
         self.flagVC = flagBrowser
         
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: "BrowserLiveVC", bundle: BundleProvider.bundle)
     }
     
     required init?(coder: NSCoder) {
@@ -233,7 +233,7 @@ extension BrowserLiveVC:ActionCellLiveDelegate{
                         switch action {
                         case .add:
                             ManagerFile.shared.moveWallpaperImage(urlImageLive: urlLocal) { _ in
-                                cell.btnAdd.setImage(#imageLiteral(resourceName: "checkAdd"), for: .normal)
+                                cell.btnAdd.setImage(ImageProvider.image(named: "checkAdd"), for: .normal)
                                 cell.btnAdd.isUserInteractionEnabled = false
                                 HUD.hide()
                             } error: {
@@ -251,7 +251,7 @@ extension BrowserLiveVC:ActionCellLiveDelegate{
                                 switch action {
                                 case .add:
                                     ManagerFile.shared.moveWallpaperImage(urlImageLive: urlp) { _ in
-                                        cell.btnAdd.setImage(#imageLiteral(resourceName: "checkAdd"), for: .normal)
+                                        cell.btnAdd.setImage(ImageProvider.image(named: "checkAdd"), for: .normal)
                                         cell.btnAdd.isUserInteractionEnabled = false
                                         HUD.hide()
                                     } error: {

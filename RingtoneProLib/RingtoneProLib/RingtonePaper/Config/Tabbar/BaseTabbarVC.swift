@@ -69,27 +69,27 @@ class BaseTabbar: UITabBarController {
         
         
         
-        let homeVC = HomeVC(nibName: "HomeVC", bundle: nil)
+        let homeVC = HomeVC()
         homeVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "homeOl")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), selectedImage: UIImage(named: "homeOl-selected")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
         
         let navHome = BaseNavVC(rootViewController: homeVC)
         
         
         
-        let libraryVC = DownloadedVC(nibName: "DownloadedVC", bundle: nil)
+        let libraryVC = DownloadedVC()
         libraryVC.tabBarItem =  UITabBarItem(title: "", image: UIImage(named: "ringtone")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), selectedImage: UIImage(named: "ringtone-selected")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
         
         let navlibraryVC = BaseNavVC(rootViewController: libraryVC)
         
         
-        let ringtone_wallPaperVC = Ringtone_WallpaperVC(nibName: "Ringtone+WallpaperVC", bundle: nil)
+        let ringtone_wallPaperVC = Ringtone_WallpaperVC()
         ringtone_wallPaperVC.tabBarItem =  UITabBarItem(title: "", image: UIImage(named: "home")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), selectedImage: UIImage(named: "home-selected")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
         
         let navRingtone_wallPaperVC = BaseNavVC(rootViewController: ringtone_wallPaperVC)
         
         
         
-        let wallPaperVC = WallPaperVC(nibName: "WallPaperVC", bundle: nil)
+        let wallPaperVC = WallPaperVC()
         wallPaperVC.tabBarItem =  UITabBarItem(title: "", image: UIImage(named: "wallpaper")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), selectedImage: UIImage(named: "wallper-selected")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
         
         let navWallPaperVC = BaseNavVC(rootViewController: wallPaperVC)
@@ -97,7 +97,7 @@ class BaseTabbar: UITabBarController {
         
         
         
-        let moreVC = MoreVC(nibName: "MoreVC", bundle: nil)
+        let moreVC = MoreVC()
         moreVC.tabBarItem =  UITabBarItem(title: "", image: UIImage(named: "moreVC")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), selectedImage: UIImage(named: "more-selected")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
         
         let navMoreVC = BaseNavVC(rootViewController: moreVC)

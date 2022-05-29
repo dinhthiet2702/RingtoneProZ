@@ -43,13 +43,13 @@ class CellDetailPlayList: UITableViewCell, Reusable {
             imvSong.sd_imageIndicator =  SDWebImageActivityIndicator.gray
             imvSong.sd_setImage(with: url) { (imv, err, _, _) in
                 if err != nil{
-                    self.imvSong.image = #imageLiteral(resourceName: "songdefault")
+                    self.imvSong.image = ImageProvider.image(named: "songdefault")
                 }
                 
             }
         }
         else{
-            imvSong.image = #imageLiteral(resourceName: "songdefault")
+            imvSong.image = ImageProvider.image(named: "songdefault")
         }
         
         lbName.text = song.name
@@ -61,12 +61,12 @@ class CellDetailPlayList: UITableViewCell, Reusable {
             imvSong.image = image
             
         }else{
-            imvSong.image = #imageLiteral(resourceName: "songdefault")
+            imvSong.image = ImageProvider.image(named: "songdefault")
         }
         
         lbName.text = song.name
         lbSub.text = song.artist
-        btnDownload.setImage(#imageLiteral(resourceName: "deleteF"), for: .normal)
+        btnDownload.setImage(ImageProvider.image(named: "deleteF"), for: .normal)
     }
     
     

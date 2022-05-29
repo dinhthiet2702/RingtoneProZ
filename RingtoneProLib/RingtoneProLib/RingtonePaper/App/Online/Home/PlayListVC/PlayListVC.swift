@@ -33,12 +33,12 @@ class PlayListVC: BaseViewControllers {
     
     init(arrPlayList:[PlayList]?) {
         self.arrPlayList = arrPlayList
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: "PlayListVC", bundle: BundleProvider.bundle)
     }
     
     init(arrGenres:[CategoryModel]?) {
         self.arrGenres = arrGenres
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: "PlayListVC", bundle: BundleProvider.bundle)
     }
     
     required init?(coder: NSCoder) {
@@ -76,7 +76,7 @@ class PlayListVC: BaseViewControllers {
         
         navigationItem.title = titleVC
         
-        changeLeftButton(image: #imageLiteral(resourceName: "backTrim"))
+        changeLeftButton(image: ImageProvider.image(named: "backTrim"))
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID:"ca-app-pub-1478057197787470/2933112803",
                                request: request,

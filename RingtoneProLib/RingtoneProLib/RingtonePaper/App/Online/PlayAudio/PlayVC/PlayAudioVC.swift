@@ -52,12 +52,12 @@ class PlayAudioVC: BaseViewControllers {
     
     func mapArtWord(url:URL?)->UIImage?{
         let imv = UIImageView()
-        var imgQ:UIImage? = #imageLiteral(resourceName: "songdefault")
+        var imgQ:UIImage? = ImageProvider.image(named: "songdefault")
         imv.sd_setImage(with: url) { (img, err, _, _) in
             if err != nil{
                 SDWebImageDownloader.shared.requestImage(with: url, options: .lowPriority, context: nil, progress: nil) { (imgD, _, errr, _) in
                     if errr != nil{
-                        imgQ = #imageLiteral(resourceName: "songdefault")
+                        imgQ = ImageProvider.image(named: "songdefault")
                     }else{
                         imgQ = imgD
                     }
@@ -81,7 +81,15 @@ class PlayAudioVC: BaseViewControllers {
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
-    
+
+    init() {
+        super.init(nibName: "PlayAudioVC", bundle: BundleProvider.bundle)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     deinit {
         player = RxMusicPlayer(items: [])
         player = nil
@@ -146,8 +154,8 @@ class PlayAudioVC: BaseViewControllers {
         player.rx.canSendCommand(cmd: .play)
             .do(onNext: { [weak self] canPlay in
                 self?.canPlay = canPlay
-                self?.btnPlay.setImage(canPlay ? #imageLiteral(resourceName: "playAudio") : #imageLiteral(resourceName: "pauseAudio") , for: .normal)
-                MusicPlayer.instance.pauseBtn.image = canPlay ? #imageLiteral(resourceName: "play").withRenderingMode(.alwaysOriginal) : #imageLiteral(resourceName: "pause").withRenderingMode(.alwaysOriginal)
+                self?.btnPlay.setImage(canPlay ? ImageProvider.image(named: "playAudio") : ImageProvider.image(named: "pauseAudio") , for: .normal)
+                MusicPlayer.instance.pauseBtn.image = canPlay ? ImageProvider.image(named: "play")?.withRenderingMode(.alwaysOriginal) : ImageProvider.image(named: "pause")?.withRenderingMode(.alwaysOriginal)
                 
             })
             .drive()
@@ -187,9 +195,9 @@ class PlayAudioVC: BaseViewControllers {
                     self.popupItem.image = img
                     
                 }else{
-                    self.imvSong.image = #imageLiteral(resourceName: "songdefault")
-                    self.imvFocus.image = #imageLiteral(resourceName: "songdefault")
-                    self.popupItem.image = #imageLiteral(resourceName: "songdefault")
+                    self.imvSong.image = ImageProvider.image(named: "songdefault")
+                    self.imvFocus.image = ImageProvider.image(named: "songdefault")
+                    self.popupItem.image = ImageProvider.image(named: "songdefault")
                 }
                 
                 
@@ -448,12 +456,12 @@ class PlayAudioVC: BaseViewControllers {
                     if url.absoluteString.contains("http"){
                         self.downloadAndConvert(url: url, sender: sender)
                     }else{
-                        sender.setImage(#imageLiteral(resourceName: "downloading"), for: .normal)
+                        sender.setImage(ImageProvider.image(named: "downloading"), for: .normal)
                         sender.isEnabled = false
                         sender.progressAnimation(value: 5)
                         ConvertRingtone.convertAudio(name: url.deletingPathExtension().lastPathComponent, url: url) { _ in
                             sender.removeProgressLayer()
-                            sender.setImage(#imageLiteral(resourceName: "downloadSong"), for: .normal)
+                            sender.setImage(ImageProvider.image(named: "downloadSong"), for: .normal)
                             sender.isEnabled = true
                         }
                     }
@@ -489,14 +497,14 @@ class PlayAudioVC: BaseViewControllers {
     
     
     func downloadAndConvert(url:URL, sender:UIButton){
-        sender.setImage(#imageLiteral(resourceName: "downloading"), for: .normal)
+        sender.setImage(ImageProvider.image(named: "downloading"), for: .normal)
         APICategoryHome.downloadMusic(url: url) { pro in
             sender.progressAnimation(value: pro)
             sender.isEnabled = false
         } completion: {[weak self] urlL in
             ConvertRingtone.convertAudio(name: self?.song?.name ?? "", url: urlL) { _ in
                 sender.removeProgressLayer()
-                sender.setImage(#imageLiteral(resourceName: "downloadSong"), for: .normal)
+                sender.setImage(ImageProvider.image(named: "downloadSong"), for: .normal)
                 sender.isEnabled = true
                 NotificationCenter.default.post(Notification.init(name: Notification.Name.init("DidRingToneDownloadSuccess")))
             }
@@ -504,7 +512,7 @@ class PlayAudioVC: BaseViewControllers {
             
         } fail: { err in
             sender.removeProgressLayer()
-            sender.setImage(#imageLiteral(resourceName: "downloadSong"), for: .normal)
+            sender.setImage(ImageProvider.image(named: "downloadSong"), for: .normal)
             sender.isEnabled = true
         }
     }
@@ -516,7 +524,7 @@ class PlayAudioVC: BaseViewControllers {
             return
         }
         
-        sender.setImage(#imageLiteral(resourceName: "downloading"), for: .normal)
+        sender.setImage(ImageProvider.image(named: "downloading"), for: .normal)
         APICategoryHome.downloadMusic(url: url) { pro in
             sender.progressAnimation(value: pro)
             sender.isEnabled = false
@@ -526,19 +534,19 @@ class PlayAudioVC: BaseViewControllers {
             CoreDataManger.shared.saveSongOffline(id: "\(song.id ?? 0)", image: self.imvSong.image?.pngData(), name: self.lbNameSong.text ?? "", artist: self.lbNameAuthor.text ?? "", album: song.album, filename: url.lastPathComponent, filesize: nil, duration: nil, idPlaylist: "\(song.id_playlist ?? 0)", type: nil) {
                
                 sender.removeProgressLayer()
-                sender.setImage(#imageLiteral(resourceName: "downloadSong"), for: .normal)
+                sender.setImage(ImageProvider.image(named: "downloadSong"), for: .normal)
                 sender.isEnabled = true
                 NotificationCenter.default.post(Notification.init(name: Notification.Name.init("DidDownloadSuccess")))
                 
             } failure: { err in
                 sender.removeProgressLayer()
-                sender.setImage(#imageLiteral(resourceName: "downloadSong"), for: .normal)
+                sender.setImage(ImageProvider.image(named: "downloadSong"), for: .normal)
                 sender.isEnabled = true
             }
             
         } fail: { err in
             sender.removeProgressLayer()
-            sender.setImage(#imageLiteral(resourceName: "downloadSong"), for: .normal)
+            sender.setImage(ImageProvider.image(named: "downloadSong"), for: .normal)
             sender.isEnabled = true
             
         }

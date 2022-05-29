@@ -21,6 +21,15 @@ class SongSearchVC: BaseViewControllers {
     
     
     var hidenKeyBroad:(()->Void)?
+
+    init() {
+        super.init(nibName: "SongSearchVC", bundle: BundleProvider.bundle)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     
     
     override func viewDidLoad() {
@@ -128,7 +137,7 @@ extension SongSearchVC:ActionCellDetailPlayListProtocol{
                             cell.btnDownload.progressAnimation(value: 5)
                             ConvertRingtone.convertAudio(name: url.deletingPathExtension().lastPathComponent, url: url) { _ in
                                 cell.btnDownload.removeProgressLayer()
-                                cell.btnDownload.setImage(#imageLiteral(resourceName: "downloadSongIc"), for: .normal)
+                                cell.btnDownload.setImage(ImageProvider.image(named: "downloadSongIc"), for: .normal)
                             }
                         }
       
@@ -162,14 +171,14 @@ extension SongSearchVC:ActionCellDetailPlayListProtocol{
         }
     }
     func downloadAndConvert(url:URL, cell:CellDetailPlayList){
-        cell.btnDownload.setImage(#imageLiteral(resourceName: "downloading"), for: .normal)
+        cell.btnDownload.setImage(ImageProvider.image(named: "downloading"), for: .normal)
         APICategoryHome.downloadMusic(url: url) { pro in
             cell.btnDownload.progressAnimation(value: pro)
             cell.btnDownload.isEnabled = false
         } completion: {[weak self] urlL in
             ConvertRingtone.convertAudio(name: cell.lbName.text ?? "", url: urlL) { _ in
                 cell.btnDownload.removeProgressLayer()
-                cell.btnDownload.setImage(#imageLiteral(resourceName: "downloadSongIc"), for: .normal)
+                cell.btnDownload.setImage(ImageProvider.image(named: "downloadSongIc"), for: .normal)
                 cell.btnDownload.isEnabled = true
                 NotificationCenter.default.post(Notification.init(name: Notification.Name.init("DidRingToneDownloadSuccess")))
             }
@@ -177,7 +186,7 @@ extension SongSearchVC:ActionCellDetailPlayListProtocol{
             
         } fail: { err in
             cell.btnDownload.removeProgressLayer()
-            cell.btnDownload.setImage(#imageLiteral(resourceName: "downloadSongIc"), for: .normal)
+            cell.btnDownload.setImage(ImageProvider.image(named: "downloadSongIc"), for: .normal)
             cell.btnDownload.isEnabled = true
         }
     }
@@ -188,7 +197,7 @@ extension SongSearchVC:ActionCellDetailPlayListProtocol{
         guard let song = song else {
             return
         }
-        cell.btnDownload.setImage(#imageLiteral(resourceName: "downloading"), for: .normal)
+        cell.btnDownload.setImage(ImageProvider.image(named: "downloading"), for: .normal)
         APICategoryHome.downloadMusic(url: url) { pro in
             cell.btnDownload.isEnabled = false
             cell.btnDownload.progressAnimation(value: pro)
@@ -198,19 +207,19 @@ extension SongSearchVC:ActionCellDetailPlayListProtocol{
             CoreDataManger.shared.saveSongOffline(id: "\(song.id ?? 0)", image: cell.imvSong.image?.pngData(), name: song.name ?? "", artist: song.artist ?? "", album: song.album, filename: url.lastPathComponent, filesize: nil, duration: nil, idPlaylist: "\(song.id_playlist ?? 0)", type: nil) {
                 cell.btnDownload.isEnabled = true
                 cell.btnDownload.removeProgressLayer()
-                cell.btnDownload.setImage(#imageLiteral(resourceName: "downloadSongIc"), for: .normal)
+                cell.btnDownload.setImage(ImageProvider.image(named: "downloadSongIc"), for: .normal)
                 NotificationCenter.default.post(Notification.init(name: Notification.Name.init("DidDownloadSuccess")))
                 
             } failure: { arr in
                 cell.btnDownload.removeProgressLayer()
-                cell.btnDownload.setImage(#imageLiteral(resourceName: "downloadSongIc"), for: .normal)
+                cell.btnDownload.setImage(ImageProvider.image(named: "downloadSongIc"), for: .normal)
                 cell.btnDownload.isEnabled = true
                 print("Asdasdasdasdasd")
             }
             
         } fail: { err in
             cell.btnDownload.removeProgressLayer()
-            cell.btnDownload.setImage(#imageLiteral(resourceName: "downloadSongIc"), for: .normal)
+            cell.btnDownload.setImage(ImageProvider.image(named: "downloadSongIc"), for: .normal)
             cell.btnDownload.isEnabled = true
         }
     }

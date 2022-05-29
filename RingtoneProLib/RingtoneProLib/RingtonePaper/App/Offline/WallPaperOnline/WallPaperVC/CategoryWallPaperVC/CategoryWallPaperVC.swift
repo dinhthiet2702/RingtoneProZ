@@ -22,7 +22,15 @@ class CategoryWallPaperVC: BaseViewControllers {
     
     private var interstitial: GADInterstitialAd?
     var indexPath:IndexPath?
-    
+
+    init() {
+        super.init(nibName: "CategoryWallPaperVC", bundle: BundleProvider.bundle)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -10,6 +10,6 @@ import Foundation
 
 struct AddModel {
     var name:String
-    var image:UIImage
+    var image:UIImage?
     var color:UIColor
 }

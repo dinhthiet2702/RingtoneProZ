@@ -33,7 +33,7 @@ class WallPaperListOnlineVC: BaseViewControllers {
     init(lisWallPapers:[WallpaperLive]?, idCategory:Int?) {
         self.lisWallPapers = lisWallPapers
         self.idCategory = idCategory
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: "WallPaperListOnlineVC", bundle: BundleProvider.bundle)
     }
     
     required init?(coder: NSCoder) {
@@ -74,7 +74,7 @@ class WallPaperListOnlineVC: BaseViewControllers {
         }
         clvPaper?.contentInset = UIEdgeInsets(top: 20, left: 16, bottom: 10, right: 16)
         navigationItem.title = titleVC
-        changeLeftButton(image: #imageLiteral(resourceName: "backTrim"))
+        changeLeftButton(image: ImageProvider.image(named: "backTrim"))
         let request = GADRequest()
             GADInterstitialAd.load(withAdUnitID:"ca-app-pub-1478057197787470/2933112803",
                                         request: request,

@@ -10,21 +10,18 @@ import CoreData
 import UIKit
 
 
-class CoreDataManger:NSObject {
+public class CoreDataManger:NSObject {
     public static let shared = CoreDataManger()
-    
+    public var persistentContainer: NSPersistentContainer?
     
     
     
     func getListSongOff() -> [Song]{
         var listSong:[SongOffline] = []
         var songs:[Song] = []
-        guard let appDelegate =
-                UIApplication.shared.delegate as? AppDelegate else {
-            return []
-        }
+        guard let persistentContainer = persistentContainer else { return [] }
         
-        let managedContext = appDelegate.persistentContainer.viewContext
+        let managedContext = persistentContainer.viewContext
         
         
         do {
@@ -47,10 +44,9 @@ class CoreDataManger:NSObject {
     
     
     func deleteSong(id:String, completion:@escaping ()->Void){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-                    
-                    // lấy Managed Object Context
-        let managedContext = appDelegate.persistentContainer.viewContext
+        guard let persistentContainer = persistentContainer else { return }
+
+        let managedContext = persistentContainer.viewContext
         
         var listSong:[SongOffline] = []
         
@@ -92,10 +88,9 @@ class CoreDataManger:NSObject {
             if index != nil{
                 return
             }else{
-                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
-                
-                // 1
-                let managedContext = appDelegate.persistentContainer.viewContext
+                guard let persistentContainer = persistentContainer else { return }
+
+                let managedContext = persistentContainer.viewContext
                 
                 // 2
                 guard let entity = NSEntityDescription.entity(forEntityName: "SongOffline",

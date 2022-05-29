@@ -42,7 +42,7 @@ class CellHomeItem: UICollectionViewCell, Reusable {
             imvPlaylist.sd_imageIndicator =  SDWebImageActivityIndicator.gray
             imvPlaylist.sd_setImage(with: url) { (img, err, _, _) in
                 if err != nil{
-                    self.imvPlaylist.image = #imageLiteral(resourceName: "songdefault")
+                    self.imvPlaylist.image = ImageProvider.image(named: "songdefault")
                 }
                 
             }
@@ -58,7 +58,7 @@ class CellHomeItem: UICollectionViewCell, Reusable {
             imvPlaylist.sd_imageIndicator =  SDWebImageActivityIndicator.gray
             imvPlaylist.sd_setImage(with: url) { (img, err, _, _) in
                 if err != nil{
-                    self.imvPlaylist.image = #imageLiteral(resourceName: "songdefault")
+                    self.imvPlaylist.image = ImageProvider.image(named: "songdefault")
                 }
                 
             }

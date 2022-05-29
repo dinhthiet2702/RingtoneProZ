@@ -41,8 +41,15 @@ class PremiumOnlineVC: BaseViewControllers {
             lbPriceYear.text = getPriceFormatted(for: listProducts.filter {$0.productIdentifier == IAPManager.oneYear}.first)
         }
     }
-    
-    
+
+    init() {
+        super.init(nibName: "PremiumOnlineVC", bundle: BundleProvider.bundle)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -185,7 +192,7 @@ class PremiumOnlineVC: BaseViewControllers {
         case .home:
             self.dismiss(animated: true, completion: nil)
         default:
-            if FireBaseRemote.sharedInstance.getFirebaseRemote(forKey: ValueKey.lockAppVer2){
+            if FireBaseRemote.sharedInstance.getLockApp() {
                 self.dismiss(animated: true, completion: nil)
             }else{
                 gotoTabbar()
@@ -210,11 +217,10 @@ class PremiumOnlineVC: BaseViewControllers {
         }
     }
     func gotoTabbar(){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
+        guard let window = UIApplication.shared.windows.filter({ $0.isKeyWindow }).first else { return }
         //---
         let tabbarVC = BaseTabbar()
-        windowApp.rootViewController = tabbarVC
-        windowApp.makeKeyAndVisible()
+        window.rootViewController = tabbarVC
     }
 }
 

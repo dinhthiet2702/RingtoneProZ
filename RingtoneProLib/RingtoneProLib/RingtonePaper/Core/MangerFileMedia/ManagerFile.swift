@@ -16,10 +16,10 @@ import CoreServices
 public typealias ExportSuccess = (_ url: URL) -> Void
 
 
-class ManagerFile {
+public class ManagerFile {
     
     
-    static let shared = ManagerFile()
+    public static let shared = ManagerFile()
     
     
     
@@ -84,7 +84,7 @@ class ManagerFile {
     
     
     
-    func createFolderAudio(){
+    public func createFolderAudio(){
         
         let documentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let directoryURL = documentDirectoryURL.appendingPathComponent("Audio", isDirectory: true)
@@ -102,7 +102,7 @@ class ManagerFile {
     }
     
     
-    func createFolderAudioDownloaded(){
+    public func createFolderAudioDownloaded(){
         
         let documentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let directoryURL = documentDirectoryURL.appendingPathComponent("AudioDownloaded", isDirectory: true)
@@ -119,7 +119,7 @@ class ManagerFile {
         }
     }
     
-    func createFolderMyRingtone(){
+    public func createFolderMyRingtone(){
         
         let documentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let directoryURL = documentDirectoryURL.appendingPathComponent("MyRingtone", isDirectory: true)
@@ -136,7 +136,7 @@ class ManagerFile {
         }
     }
     
-    func createFolderWallpaperDownload(){
+    public func createFolderWallpaperDownload(){
         
         let documentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let directoryURL = documentDirectoryURL.appendingPathComponent("WallPapersDownload", isDirectory: true)
@@ -153,7 +153,7 @@ class ManagerFile {
         }
     }
     
-    func createFolderMyWallpapers(){
+    public func createFolderMyWallpapers(){
         
         let documentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let directoryURL = documentDirectoryURL.appendingPathComponent("MyWallPapers", isDirectory: true)
@@ -363,7 +363,7 @@ class ManagerFile {
     
     
 }
-extension FileManager {
+public extension FileManager {
     func removeFileIfNecessary(at url: URL) throws {
         guard fileExists(atPath: url.path) else {
             return

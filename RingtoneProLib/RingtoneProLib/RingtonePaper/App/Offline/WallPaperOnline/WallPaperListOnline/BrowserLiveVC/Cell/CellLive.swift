@@ -61,7 +61,7 @@ class CellLive: UICollectionViewCell {
                     
                     print("urlll", urlLocal, url)
                     self.btnAdd.isUserInteractionEnabled = false
-                    self.btnAdd.setImage(#imageLiteral(resourceName: "checkAdd"), for: .normal)
+                    self.btnAdd.setImage(ImageProvider.image(named: "checkAdd"), for: .normal)
                 }
             }
         }
@@ -87,7 +87,7 @@ class CellLive: UICollectionViewCell {
                             
                             print("urlll", urlLocal, url)
                             self.btnAdd.isUserInteractionEnabled = false
-                            self.btnAdd.setImage(#imageLiteral(resourceName: "checkAdd"), for: .normal)
+                            self.btnAdd.setImage(ImageProvider.image(named: "checkAdd"), for: .normal)
                         }
                     }
                     

@@ -272,6 +272,7 @@
 		048DAAF72842182D008B6A42 /* DDASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 048DAAB22842182C008B6A42 /* DDASLLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		048DAAF82842182D008B6A42 /* HTTPDynamicFileResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 048DAAB32842182C008B6A42 /* HTTPDynamicFileResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		048DAAF92842182D008B6A42 /* MultipartMessageHeaderField.h in Headers */ = {isa = PBXBuildFile; fileRef = 048DAAB42842182C008B6A42 /* MultipartMessageHeaderField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		048DAAFB28421B0D008B6A42 /* ImagesContraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048DAAFA28421B0D008B6A42 /* ImagesContraint.swift */; };
 		41B74CE371FA74665FC43FA8 /* Pods_RingtoneProLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C96C393594762711D1C86B8 /* Pods_RingtoneProLib.framework */; };
 /* End PBXBuildFile section */
 
@@ -542,6 +543,7 @@
 		048DAAB22842182C008B6A42 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
 		048DAAB32842182C008B6A42 /* HTTPDynamicFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPDynamicFileResponse.h; sourceTree = "<group>"; };
 		048DAAB42842182C008B6A42 /* MultipartMessageHeaderField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipartMessageHeaderField.h; sourceTree = "<group>"; };
+		048DAAFA28421B0D008B6A42 /* ImagesContraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesContraint.swift; sourceTree = "<group>"; };
 		46EC160E81F80B0C07475745 /* Pods-RingtoneProLib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RingtoneProLib.release.xcconfig"; path = "Target Support Files/Pods-RingtoneProLib/Pods-RingtoneProLib.release.xcconfig"; sourceTree = "<group>"; };
 		7C96C393594762711D1C86B8 /* Pods_RingtoneProLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RingtoneProLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7918778F19F7A230978DA0 /* Pods-RingtoneProLib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RingtoneProLib.debug.xcconfig"; path = "Target Support Files/Pods-RingtoneProLib/Pods-RingtoneProLib.debug.xcconfig"; sourceTree = "<group>"; };
@@ -607,6 +609,7 @@
 		048DA802284215E8008B6A42 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				048DAAFA28421B0D008B6A42 /* ImagesContraint.swift */,
 				048DAA6F2842182C008B6A42 /* WifiUpload */,
 				048DA803284215E8008B6A42 /* MediaPlay.swift */,
 				048DA804284215E8008B6A42 /* SharedAudioToGarage */,
@@ -1861,6 +1864,7 @@
 				048DA9CE284215F3008B6A42 /* CellGenres.swift in Sources */,
 				048DAA38284215F4008B6A42 /* LNPopupItem.m in Sources */,
 				048DAA41284215F4008B6A42 /* UIViewController+LNPopupSupportPrivate.m in Sources */,
+				048DAAFB28421B0D008B6A42 /* ImagesContraint.swift in Sources */,
 				048DA9D5284215F3008B6A42 /* SearchVC.swift in Sources */,
 				048DA9DF284215F3008B6A42 /* PlayAudioVC.swift in Sources */,
 				048DAA07284215F3008B6A42 /* CategoryWallPaperVC.swift in Sources */,

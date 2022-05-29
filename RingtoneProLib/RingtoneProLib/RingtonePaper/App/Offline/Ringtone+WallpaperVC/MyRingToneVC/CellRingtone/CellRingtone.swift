@@ -59,7 +59,7 @@ class CellRingtone: UITableViewCell {
            
             self.btnDrop.transform = CGAffineTransform(rotationAngle: .pi/2)
             NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying) , name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
-            btnPlayMusic.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            btnPlayMusic.setImage(ImageProvider.image(named: "pause"), for: .normal)
            
             contentView.layoutSubviews()
         }
@@ -69,7 +69,7 @@ class CellRingtone: UITableViewCell {
             timer = nil
             self.vStackSlider.isHidden = true
             sliderAudio.isHidden = true
-            btnPlayMusic.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            btnPlayMusic.setImage(ImageProvider.image(named: "play"), for: .normal)
             MusicPlayer.instance.pause()
             self.btnDrop.transform = CGAffineTransform(rotationAngle: 0)
             
@@ -100,7 +100,7 @@ class CellRingtone: UITableViewCell {
         sliderAudio.value = 0
         sliderAudio.minimumValue = 0
         
-        sliderAudio.setThumbImage(#imageLiteral(resourceName: "thumSlider"), for: .normal)
+        sliderAudio.setThumbImage(ImageProvider.image(named: "thumSlider"), for: .normal)
         
         sliderAudio.addTarget(self, action: #selector(onSliderValChanged(slider:event:)), for: .valueChanged)
         
@@ -116,7 +116,7 @@ class CellRingtone: UITableViewCell {
     
     
     @objc func playerDidFinishPlaying(){
-        btnPlayMusic.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+        btnPlayMusic.setImage(ImageProvider.image(named: "play"), for: .normal)
         timer?.invalidate()
         timer = nil
         delegate?.didFinishTime(cell: self)
@@ -130,14 +130,14 @@ class CellRingtone: UITableViewCell {
                 
                 timer?.invalidate()
                 timer = nil
-                sliderAudio.setThumbImage(#imageLiteral(resourceName: "thumScale"), for: .normal)
+                sliderAudio.setThumbImage(ImageProvider.image(named: "thumScale"), for: .normal)
                 // handle drag began
             case .moved:
                 
-                sliderAudio.setThumbImage(#imageLiteral(resourceName: "thumScale"), for: .normal)
+                sliderAudio.setThumbImage(ImageProvider.image(named: "thumScale"), for: .normal)
                 // handle drag moved
             case .ended:
-                sliderAudio.setThumbImage(#imageLiteral(resourceName: "thumSlider"), for: .normal)
+                sliderAudio.setThumbImage(ImageProvider.image(named: "thumSlider"), for: .normal)
                 MusicPlayer.instance.seekToPosition(seconds: Float64(slider.value)) {
                     
                     self.timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(self.updateSlider), userInfo: nil, repeats: true)

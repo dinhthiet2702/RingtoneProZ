@@ -21,7 +21,15 @@ class WallPaperVC: BaseViewControllers {
     
     
     var indexLast = 0
-    
+
+    init() {
+        super.init(nibName: "WallPaperVC", bundle: BundleProvider.bundle)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()

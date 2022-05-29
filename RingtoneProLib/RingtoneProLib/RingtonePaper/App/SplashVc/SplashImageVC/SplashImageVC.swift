@@ -11,6 +11,15 @@ class SplashImageVC: UIViewController {
 
     @IBOutlet weak var btnContinue: UIButton!
     @IBOutlet weak var imv: UIImageView!
+
+    init() {
+        super.init(nibName: "SplashImageVC", bundle: BundleProvider.bundle)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,9 +42,6 @@ class SplashImageVC: UIViewController {
         
         let tabbarVC = BaseTabbar()
         window.rootViewController = tabbarVC
-        window.makeKeyAndVisible()
-        UserDefaults.setFirstLauchApp(isFirst: true)
-        
     }
     
 }

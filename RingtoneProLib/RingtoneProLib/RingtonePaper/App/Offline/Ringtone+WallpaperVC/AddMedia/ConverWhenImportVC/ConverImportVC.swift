@@ -25,7 +25,7 @@ class ConverImportVC: UIViewController {
     
     init(arrURL:[URL]?) {
         self.arrURL = arrURL
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: "ConverImportVC", bundle: BundleProvider.bundle)
     }
     
     required init?(coder: NSCoder) {

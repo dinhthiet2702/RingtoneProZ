@@ -22,7 +22,7 @@ class SaveRingToneVC: BaseViewControllers {
         self.ringtone = ringtone
         self.startTime = startTime
         self.endTime = endTime
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: "SaveRingToneVC", bundle: BundleProvider.bundle)
     }
     
     required init?(coder: NSCoder) {
@@ -106,7 +106,7 @@ class SaveRingToneVC: BaseViewControllers {
         
         ConvertRingtone.convertAudio(name: name, url: ringtone.url, startTime: startTime, endTime: endTime) { url in
             DispatchQueue.main.async {
-                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
+                guard let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first else { return }
                 //---
                 let tabbarVC = BaseTabbar()
                 if !UserDefaults.getOnlineAPP(){
@@ -116,8 +116,7 @@ class SaveRingToneVC: BaseViewControllers {
                     tabbarVC.selectedIndex = 2
                     tabbarVC.animate(index: 2)
                 }
-                windowApp.rootViewController = tabbarVC
-                windowApp.makeKeyAndVisible()
+                window.rootViewController = tabbarVC
             }
         }
         

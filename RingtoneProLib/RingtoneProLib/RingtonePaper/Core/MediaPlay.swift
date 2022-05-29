@@ -20,8 +20,8 @@ class MusicPlayer:NSObject {
     
     static let clickPlay = PublishRelay<RxMusicPlayer.Command>()
     
-    let pauseBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "pause").withRenderingMode(.alwaysOriginal), style: .done, target: nil, action: nil)
-    let nextBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "nextMiniView").withRenderingMode(.alwaysOriginal), style: .done, target: nil, action: nil)
+    let pauseBtn = UIBarButtonItem(image: ImageProvider.image(named: "pause")?.withRenderingMode(.alwaysOriginal), style: .done, target: nil, action: nil)
+    let nextBtn = UIBarButtonItem(image: ImageProvider.image(named: "nextMiniView")?.withRenderingMode(.alwaysOriginal), style: .done, target: nil, action: nil)
     
     var player = AVPlayer()
     
@@ -94,7 +94,7 @@ class MusicPlayer:NSObject {
         if let indexPath = indexPath, let cell = tbv?.cellForRow(at: indexPath) as? CellDetailPlayList{
             controller.popupItem.image = cell.imvSong.image
         }else{
-            controller.popupItem.image = #imageLiteral(resourceName: "songdefault")
+            controller.popupItem.image = ImageProvider.image(named: "songdefault")
         }
         
         controller.popupItem.subtitle = "0:00 / --:--"
